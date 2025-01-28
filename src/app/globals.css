@@ -2,20 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
+/* For CSS variable related to font such as --font-primary, refer to ui/fonts/fonts.tsx 
+  which helps with import optimization as it is done once and only its subsets are imported
+  Open this for more detail: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts#with-tailwind-css */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-background: #ffffff;
+  --color-text: #373643;
+  --color-primary: #00ff99;
+  --color-secondary: #82efc4;
+  --color-accent: #f08186;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-background: #0a0a0a;
+    --color-foreground: #ededed;
+    --color-primary: #00ff99;
   }
-}
+} */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-family: var(--font-primary);
+}
+
+h1 {
+  font-family: var(--font-lato);
+  font-weight: 700;
+  font-size: 48px;
+
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-family: var(--font-lato);
+  font-weight: 400;
+  font-size: 24px;
+
+  margin-bottom: 24px;
+}
+
+p {
+  font-family: var(--font-open-sans);
+  font-weight: 400;
+  font-size: 16px;
+
+  line-height: 1.6;
+
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+
+.button-inward {
+  font-family: var(--font-lato);
+  font-weight: 700;
+  font-size: 16px;
+
+  background: var(--color-primary);
+  color: var(--color-background);
+
+  padding: 12px 24px;
+  border: none;
+
+  cursor: pointer;
+}
+
+.button-outward {
+  font-family: var(--font-lato);
+  font-weight: 700;
+  font-size: 16px;
+
+  color: var(--color-text);
+
+  padding: 12px 24px;
+  border-color: var(--color-primary);
+  border-width: 2px;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+/* Styling for ordered lists */
+ol {
+  font-family: var(--font-open-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Styling for list items */
+li {
+  font-family: var(--font-open-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.shade {
+  background: var(--color-primary);
 }
