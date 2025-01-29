@@ -30,7 +30,7 @@ export function MainArticle({ content }: { content: MainArticleContentType }) {
           <h1>{content.title}</h1>
           <h2>{content.catchPhrase}</h2>
           <p>{content.paragraph}</p>
-          <button className="button-outward">{content.title}</button>
+          <button className="button-outward">{content.buttonText}</button>
         </main>
       </div>
       <div className="flex h-[100%] w-[40%] justify-center">
