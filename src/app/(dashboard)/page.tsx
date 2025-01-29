@@ -1,11 +1,6 @@
-import {
-  MainArticle,
-  mainArticleConst,
-  MainArticleContentType,
-} from "@/app/(dashboard)/article";
+import { MainArticle, mainArticleConst } from "@/app/(dashboard)/article";
 import Navbar from "@/app/(dashboard)/ui/components/navbar";
 import Image from "next/image";
-import { title } from "process";
 
 export default function Home() {
   return (

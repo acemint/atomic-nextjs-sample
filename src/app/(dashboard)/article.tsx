@@ -24,8 +24,8 @@ export const mainArticleConst: MainArticleContentType = {
 
 export function MainArticle({ content }: { content: MainArticleContentType }) {
   return (
-    <div className="mb-16 flex h-[80%] w-[100%]">
-      <div className="mx-auto my-auto flex w-[60%] justify-center">
+    <div className="mb-16 flex w-[100%] flex-col lg:h-[80%] lg:flex-row">
+      <div className="mx-auto mb-32 mt-32 flex w-[60%] justify-center lg:my-auto">
         <main>
           <h1>{content.title}</h1>
           <h2>{content.catchPhrase}</h2>
@@ -33,7 +33,7 @@ export function MainArticle({ content }: { content: MainArticleContentType }) {
           <button className="button-outward">{content.buttonText}</button>
         </main>
       </div>
-      <div className="flex h-[100%] w-[40%] justify-center">
+      <div className="mx-auto my-auto hidden h-[100%] w-[40%] justify-center lg:flex">
         <Image
           className="mx-auto my-auto h-auto w-[70%] bg-[var(--color-primary)] px-4 py-4"
           src={content.imgUrl}
