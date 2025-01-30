@@ -63,7 +63,7 @@ a {
 }
 
 .nav-text {
-  @apply px-3 py-2 text-sm md:text-base lg:text-lg;
+  @apply border-b-2 border-transparent px-3 py-2 text-sm transition-all hover:border-b-[var(--color-accent)] md:text-base lg:text-lg;
   font-family: var(--font-open-sans);
   font-weight: 400;
 }

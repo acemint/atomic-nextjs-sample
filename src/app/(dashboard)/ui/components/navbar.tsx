@@ -37,11 +37,7 @@ export default function Navbar() {
         {/* Menu Texts */}
         <div className="hidden space-x-8 md:flex md:flex-row">
           {navLinks.map((link) => (
-            <Link
-              key={link.title}
-              href={link.path}
-              className="nav-text transition hover:border-b-2 hover:border-b-[var(--color-accent)]"
-            >
+            <Link key={link.title} href={link.path} className="nav-text">
               {link.title}
             </Link>
           ))}
