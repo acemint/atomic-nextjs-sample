@@ -52,14 +52,14 @@ export default function Navbar() {
       {/* Menu Texts */}
       <div
         className={clsx(
-          "bg-[var(--color-primary) absolute flex h-screen w-full flex-col space-y-1 border-b-[1px] border-b-[var(--color-accent)] bg-white px-2 pb-3 pt-2 md:hidden",
+          "bg-[var(--color-primary) absolute flex h-screen w-full flex-col border-b-[1px] border-b-[var(--color-accent)] bg-white transition-transform md:hidden",
           {
-            "hidden": !isMenuOpen,
+            "translate-y-full": !isMenuOpen,
           },
         )}
       >
         {navLinks.map((link) => (
-          <Link key={link.title} href={link.path} className="nav-text-mobile text-center">
+          <Link key={link.title} href={link.path} className="nav-text-mobile">
             {link.title}
           </Link>
         ))}
