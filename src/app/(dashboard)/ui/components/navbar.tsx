@@ -8,81 +8,61 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { title: "About", path: "/about" },
-    { title: "Services", path: "/services" },
-    { title: "Contact", path: "/contact" },
+    { title: "About", path: "/" },
+    { title: "Services", path: "/" },
+    { title: "Contact", path: "/" },
   ];
 
   return (
-    <nav>
-      <div className="min-w-screen mx-auto flex h-16 items-center justify-between bg-[var(--color-background)] px-4">
+    <nav className="min-w-full bg-[var(--color-background)]">
+      <div className="flex h-16 items-center justify-between px-4 py-2">
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className={"inline-flex rounded-full p-2 active:bg-gray-200 md:hidden"}
+          aria-label="Main menu"
+        >
+          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
         {/* Logo */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 md:mx-0">
           <Link href="/">
-            <Image
-              src="/logo.png" // Update with your logo path
-              alt="Logo"
-              width={1102}
-              height={402}
-              className="h-10 w-auto"
-            />
+            <Image src="/logo.png" alt="Logo" width={1102} height={402} className="h-8 w-auto md:h-12" />
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="inline-flex items-center justify-center p-2 focus:rounded-full focus:bg-gray-100"
-            aria-label="Main menu"
-          >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
-        </div>
-
         {/* Menu Texts */}
-        <div
-          className={clsx("w-full flex-grow md:flex md:w-auto", {
-            "block": isMenuOpen,
-            "hidden": !isMenuOpen,
-          })}
-        >
-          <div className="mt-2 flex flex-col space-y-2 pb-4 md:ml-auto md:mt-0 md:flex-row md:space-x-8 md:space-y-0 md:pb-0">
-            {navLinks.map((link) => (
-              <Link
-                key={link.title}
-                href={link.path}
-                className={`hover:var(--color-primary) rounded-md px-3 py-2 transition-colors ${
-                  isMenuOpen ? "block" : ""
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.title}
-              </Link>
-            ))}
-          </div>
+        <div className="hidden space-x-8 md:flex md:flex-row">
+          {navLinks.map((link) => (
+            <Link
+              key={link.title}
+              href={link.path}
+              className="nav-text transition hover:border-b-2 hover:border-b-[var(--color-accent)]"
+            >
+              {link.title}
+            </Link>
+          ))}
         </div>
+      </div>
+
+      {/* Mobile Menu Links */}
+      {/* Menu Texts */}
+      <div
+        className={clsx(
+          "bg-[var(--color-primary) absolute flex h-screen w-full flex-col space-y-1 border-b-[1px] border-b-[var(--color-accent)] bg-white px-2 pb-3 pt-2 md:hidden",
+          {
+            "hidden": !isMenuOpen,
+          },
+        )}
+      >
+        {navLinks.map((link) => (
+          <Link key={link.title} href={link.path} className="nav-text-mobile text-center">
+            {link.title}
+          </Link>
+        ))}
       </div>
     </nav>
   );

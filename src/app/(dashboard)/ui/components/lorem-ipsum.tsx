@@ -5,8 +5,7 @@ export default function LoremIpsum() {
       <h2>h2: Provides an implementation for your imagination</h2>
       <h3>h3: Provides smaller conent</h3>
       <p>
-        p: Our platform makes you realize that your imagination is no longer a
-        thought, but a matter that can be used.
+        p: Our platform makes you realize that your imagination is no longer a thought, but a matter that can be used.
       </p>
       <ol>
         <li>li: Step 1: Sign up for a free account</li>

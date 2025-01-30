@@ -14,11 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${lato.variable} ${openSans.variable} h-screen antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${lato.variable} ${openSans.variable} h-screen antialiased`}>{children}</body>
     </html>
   );
 }
