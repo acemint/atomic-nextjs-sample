@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { lato, openSans } from "@/app/(dashboard)/ui/fonts/fonts";
+import { lato, openSans } from "@/app/fonts";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {

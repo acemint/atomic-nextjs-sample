@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button } from "@/app/ui/atoms/buttons";
+import { H1, H2, H3, P, Button } from "@/app/ui/atoms";
 
 export type MainArticleContentType = {
   title: string;
@@ -28,9 +28,9 @@ export function MainArticle({ content }: { content: MainArticleContentType }) {
     <div className="mb-16 flex w-[100%] flex-col lg:h-[80%] lg:flex-row">
       <div className="mx-auto mb-32 mt-32 flex w-[60%] justify-center lg:my-auto">
         <main>
-          <h1>{content.title}</h1>
-          <h2>{content.catchPhrase}</h2>
-          <p>{content.paragraph}</p>
+          <H1 className="mb-4">{content.title}</H1>
+          <H2 className="mb-6">{content.catchPhrase}</H2>
+          <P className="mb-8 max-w-3xl">{content.paragraph}</P>
           <Button variant="secondary">{content.buttonText}</Button>
         </main>
       </div>

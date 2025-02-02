@@ -1,4 +1,3 @@
-// app/page.tsx (or page.js)
 import { Lato, Open_Sans } from "next/font/google";
 
 export const lato = Lato({
