@@ -74,35 +74,6 @@ a {
   font-weight: 400;
 }
 
-.button-inward {
-  @apply text-base md:text-lg lg:text-xl;
-  font-family: var(--font-lato);
-  font-weight: 700;
-
-  background: var(--color-primary);
-  color: var(--color-background);
-
-  padding: 12px 24px;
-  border: none;
-
-  cursor: pointer;
-}
-
-.button-outward {
-  @apply text-base md:text-lg lg:text-xl;
-  font-family: var(--font-lato);
-  font-weight: 700;
-
-  color: var(--color-text);
-
-  padding: 12px 24px;
-  border-color: var(--color-primary);
-  border-width: 2px;
-  border-radius: 4px;
-
-  cursor: pointer;
-}
-
 /* Styling for ordered lists */
 ol {
   @apply text-[12px] lg:text-[16px];

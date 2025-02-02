@@ -1,0 +1,20 @@
+.btn-base {
+  @apply cursor-pointer px-6 py-3 text-base md:text-lg lg:text-xl;
+
+  font-family: var(--font-lato);
+  font-weight: 700;
+}
+
+.primary {
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+.secondary {
+  border-color: var(--color-primary);
+  color: var(--color-text);
+
+  border-color: var(--color-primary);
+  border-width: 2px;
+  border-radius: 4px;
+}
